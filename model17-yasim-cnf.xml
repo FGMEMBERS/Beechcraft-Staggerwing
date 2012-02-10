@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList include="model17-base.xml">
+
+  <sim>
+
+    <description>Beechcraft Staggerwing (YASim)</description>
+    <flight-model archive="y">yasim</flight-model>
+    <aero archive="y">model17-yasim</aero>
+
+  </sim>
+
+</PropertyList>
+
