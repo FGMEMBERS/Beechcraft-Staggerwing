@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
@@ -64,13 +64,13 @@
     <object-name>roueA</object-name>
     <object-name>echappements</object-name>
     <object-name>trous</object-name>
-
+    <object-name>cables</object-name>
+    
     <!-- Objets transparents -->
     <object-name>vitres</object-name>
     <object-name>vitreporte</object-name>
     <object-name>propblur</object-name>
     <object-name>propdisc</object-name>
-    <object-name>cables</object-name>
   </animation>
 
   <animation>
@@ -110,39 +110,21 @@
     <object-name>roueA</object-name>
     <object-name>echappements</object-name>
     <object-name>trous</object-name>
-
+    <object-name>cables</object-name>
+    
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
     <texture>texture.png</texture>
-<!--
-    <diffuse>
-      <red-prop>diffuse/red</red-prop>
-      <green-prop>diffuse/green</green-prop>
-      <blue-prop>diffuse/blue</blue-prop>
-    </diffuse>
-
-    <ambient>
-      <red-prop>ambient/red</red-prop>
-      <green-prop>ambient/green</green-prop>
-      <blue-prop>ambient/blue</blue-prop>
-    </ambient>
--->
     <specular>
       <red-prop>specular/red</red-prop>
       <green-prop>specular/green</green-prop>
       <blue-prop>specular/blue</blue-prop>
     </specular>
-
     <emission>
       <red-prop>emission/red</red-prop>
       <green-prop>emission/green</green-prop>
       <blue-prop>emission/blue</blue-prop>
     </emission>
-<!--
-    <shininess>
-      <shininess-prop>shininess</shininess-prop>
-    </shininess>
--->
   </animation>
 
   <effect>
@@ -168,6 +150,37 @@
     <object-name>aubans</object-name>
     <object-name>bol</object-name>
     <object-name>porte</object-name>
+    <condition>
+      <not><property>sim/rendering/rembrandt/enabled</property></not>
+    </condition>
+  </effect>
+
+  <effect>
+    <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+    <object-name>capot</object-name>
+    <object-name>fuselage</object-name>
+    <object-name>porteG1</object-name>
+    <object-name>porteG2</object-name>
+    <object-name>porteD1</object-name>
+    <object-name>porteD2</object-name>
+    <object-name>porteAG</object-name>
+    <object-name>porteAD</object-name>
+    <object-name>ailesH</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>ailesB</object-name>
+    <object-name>voletG</object-name>
+    <object-name>voletD</object-name>
+    <object-name>ailes2</object-name>
+    <object-name>profondeurG</object-name>
+    <object-name>profondeurD</object-name>
+    <object-name>direction</object-name>
+    <object-name>aubans</object-name>
+    <object-name>bol</object-name>
+    <object-name>porte</object-name>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
   </effect>
 
   <animation>
@@ -182,8 +195,18 @@
     <object-name>vitres</object-name>
     <object-name>propblur</object-name>
     <object-name>propdisc</object-name>
-    <object-name>cables</object-name>
   </animation>
+
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>vitres</object-name>
+    <object-name>propblur</object-name>
+    <object-name>propdisc</object-name>
+  </effect>
 
   <!-- Le moteur -->
   <model>
@@ -208,8 +231,15 @@
 
   <!-- L'interieur -->
   <model>
+    <name>Interieur</name>
     <path>Aircraft/Beechcraft-Staggerwing/Models/Interior/interior.xml</path>
   </model>
+
+  <!-- For Rembrandt -->
+  <animation>
+    <type>noshadow</type>
+    <object-name>Interieur</object-name>
+  </animation>
 
   <!-- Cranking effects -->
   <!-- Left -->
@@ -316,6 +346,12 @@
   <animation>
     <type>spin</type>
     <object-name>HeliceComplete</object-name>
+    <condition>
+      <greater-than>
+        <property>engines/engine[0]/rpm</property>
+        <value> 5 </value>
+      </greater-than>
+    </condition>
     <property>engines/engine[0]/rpm</property>
     <factor> 1 </factor>
     <axis>
@@ -771,7 +807,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Beechcraft-Staggerwing/Models/lights/StrobeWhite.xml</path>
+    <path>Aircraft/Beechcraft-Staggerwing/Models/lights/StrobeLight.xml</path>
     <offsets>
       <x-m> -1.648 </x-m>
       <y-m> -4.867 </y-m>
@@ -780,7 +816,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Beechcraft-Staggerwing/Models/lights/StrobeWhite.xml</path>
+    <path>Aircraft/Beechcraft-Staggerwing/Models/lights/StrobeLight.xml</path>
     <offsets>
       <x-m> -1.648 </x-m>
       <y-m>  4.867 </y-m>

@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
-  <chase-distance-m type="double" archive="y"> -10 </chase-distance-m>
+  <chase-distance-m type="double" archive="y"> -15 </chase-distance-m>
 
   <view n="100">
     <name>Right Passanger Seat View</name>
@@ -37,7 +37,8 @@
   </view>
 
   <view n="0">
-    <internal archive="y">true</internal>
+    <internal>true</internal>
+    <type>lookfrom</type>
     <config>
        <x-offset-m archive="y"> -0.300 </x-offset-m> <!-- Right -->
        <y-offset-m archive="y">  0.695 </y-offset-m> <!-- Up    -->

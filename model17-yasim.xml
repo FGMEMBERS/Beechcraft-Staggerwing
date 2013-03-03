@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <!-- Beechcraft Model 17 Staggerwing BARANGER Emmanuel with Melchior script (2012)
 
@@ -40,7 +40,7 @@
         length="4.90"
         taper="1"
         camber="0.01">
-        <stall aoa="18" width="1" peak="1.5"/>
+        <stall aoa="16" width="1" peak="1.5"/>
         <flap0 start="0.244" end="0.86" lift="1.2" drag="1.1"/>
 
         <control-input axis="/controls/flight/aileron" control="FLAP0" split="true"/>
@@ -71,7 +71,7 @@
 	 length="1.784"
          taper="0.60"
          sweep="10">
-         <stall aoa="16" width="1" peak="1.5"/>
+         <stall aoa="19" width="1" peak="1.5"/>
          <flap0 start="0.0" end="1" lift="1.55" drag="1.2"/>
 
          <control-input axis="/controls/flight/elevator" control="FLAP0"/>
@@ -85,10 +85,12 @@
 	 length="1.700"
          taper="0.60"
          sweep="10">
-         <stall aoa="14" width="1" peak="1.5"/>
-         <flap0 start="0" end="1" lift="1.6" drag="1.2"/>
+         <stall aoa="16" width="1" peak="1.5"/>
+         <flap0 start="0" end="1" lift="1.2" drag="1.1"/>
+         
          <control-input axis="/controls/flight/rudder" square="true" control="FLAP0" invert="true"/>
          <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
+         
          <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm" min="1" max="-1"/>
   </vstab>
 

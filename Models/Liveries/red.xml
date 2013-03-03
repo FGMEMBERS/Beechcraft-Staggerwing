@@ -6,8 +6,8 @@
     
       <model>
         <livery>
-          <name type="string">Default</name>
-          <texture>texture.png</texture>
+          <name type="string">Red</name>
+          <texture>Liveries/red.png</texture>
           <diffuse>
             <red>   1 </red>
             <green> 1 </green>
