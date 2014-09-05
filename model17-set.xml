@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<!-- <PropertyList include="model17-jsbsim-cnf.xml"> -->
-<PropertyList include="model17-yasim-cnf.xml">
+<PropertyList include="model17-base.xml">
 
   <sim>
 
     <description>Beechcraft Staggerwing (YASim)</description>
     <author>Emmanuel BARANGER (3D/FDM)</author>
-
+    <flight-model archive="y">yasim</flight-model>
+    <aero archive="y">model17-yasim</aero>
+    
     <rating>
-      <FDM type="int">     1 </FDM>
+      <FDM type="int">     2 </FDM>
       <systems type="int"> 1 </systems>
       <cockpit type="int"> 1 </cockpit>
       <model type="int">   4 </model>
@@ -18,4 +19,3 @@
   </sim>
 
 </PropertyList>
-

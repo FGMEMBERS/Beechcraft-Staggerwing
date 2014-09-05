@@ -13,9 +13,9 @@
       var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
       var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
       
-      var crew_door = self.getNode("instrumentation/doors/crew/position-norm", 1);
-      var passenger_door = self.getNode("instrumentation/doors/passenger/position-norm", 1);
-    
+      var crew_door = self.getNode("sim/model/door-positions/crew/position-norm", 1);
+      var passenger_door = self.getNode("sim/model/door-positions/passenger/position-norm", 1);
+      
       crew_door.alias(float_0);
       passenger_door.alias(float_1);
     </load>
@@ -50,8 +50,11 @@
     <object-name>aubans</object-name>
     <object-name>bol</object-name>
     <object-name>porte</object-name>
-
+    <object-name>support</object-name>
+    <object-name>pito</object-name>
+    
     <object-name>helice</object-name>
+    <object-name>antenne</object-name>
     <object-name>attache</object-name>
     <object-name>axeGA</object-name>
     <object-name>axeGB</object-name>
@@ -96,8 +99,11 @@
     <object-name>aubans</object-name>
     <object-name>bol</object-name>
     <object-name>porte</object-name>
-
+    <object-name>support</object-name>
+    <object-name>pito</object-name>
+    
     <object-name>helice</object-name>
+    <object-name>antenne</object-name>
     <object-name>attache</object-name>
     <object-name>axeGA</object-name>
     <object-name>axeGB</object-name>
@@ -115,11 +121,6 @@
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
     <texture>texture.png</texture>
-    <specular>
-      <red-prop>specular/red</red-prop>
-      <green-prop>specular/green</green-prop>
-      <blue-prop>specular/blue</blue-prop>
-    </specular>
     <emission>
       <red-prop>emission/red</red-prop>
       <green-prop>emission/green</green-prop>
@@ -150,60 +151,22 @@
     <object-name>aubans</object-name>
     <object-name>bol</object-name>
     <object-name>porte</object-name>
-    <condition>
-      <not><property>sim/rendering/rembrandt/enabled</property></not>
-    </condition>
+    <object-name>support</object-name>
+    <object-name>pito</object-name>
   </effect>
-
-  <effect>
-    <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
-    <object-name>capot</object-name>
-    <object-name>fuselage</object-name>
-    <object-name>porteG1</object-name>
-    <object-name>porteG2</object-name>
-    <object-name>porteD1</object-name>
-    <object-name>porteD2</object-name>
-    <object-name>porteAG</object-name>
-    <object-name>porteAD</object-name>
-    <object-name>ailesH</object-name>
-    <object-name>aileronG</object-name>
-    <object-name>aileronD</object-name>
-    <object-name>ailesB</object-name>
-    <object-name>voletG</object-name>
-    <object-name>voletD</object-name>
-    <object-name>ailes2</object-name>
-    <object-name>profondeurG</object-name>
-    <object-name>profondeurD</object-name>
-    <object-name>direction</object-name>
-    <object-name>aubans</object-name>
-    <object-name>bol</object-name>
-    <object-name>porte</object-name>
-    <condition>
-      <property>sim/rendering/rembrandt/enabled</property>
-    </condition>
-  </effect>
-
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-    <object-name>vitres</object-name>
-  </animation>
-
-  <animation>
-    <type>noshadow</type>
-    <object-name>vitres</object-name>
-    <object-name>propblur</object-name>
-    <object-name>propdisc</object-name>
-  </animation>
 
   <!-- working for Rembrandt -->
   <effect>
-    <inherits-from>Effects/model-transparent</inherits-from>
-    <condition>
-      <property>sim/rendering/rembrandt/enabled</property>
-    </condition>
+    <inherits-from>Aircraft/Beechcraft-Staggerwing/Models/Effects/Glass/glass</inherits-from>
     <object-name>vitres</object-name>
+    <object-name>vitreporte</object-name>
+  </effect>
+  
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <object-name>vitres</object-name>
+    <object-name>vitreporte</object-name>
     <object-name>propblur</object-name>
     <object-name>propdisc</object-name>
   </effect>
@@ -703,7 +666,86 @@
       <z> 1 </z>
     </axis>
   </animation>
-
+  
+  <!-- Compression -->
+  <animation>
+    <name>EnsembleGauche</name>
+    <object-name>axeGB</object-name>
+    <object-name>roueG</object-name>
+  </animation>
+  
+  <animation>
+    <type>translate</type>
+    <object-name>EnsembleGauche</object-name>
+    <property>gear/gear[0]/compression-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep> 0.0000 </dep></entry>
+      <entry><ind> 1 </ind><dep> 0.1011 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> -1.99051 </x-m>
+      <y-m> -1.10670 </y-m>
+      <z-m> -1.15824 </z-m>
+    </center>
+    <axis>
+      <x> 0.044 </x>
+      <y> 0.000 </y>
+      <z> 0.091 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <name>EnsembleDroit</name>
+    <object-name>axeDB</object-name>
+    <object-name>roueD</object-name>
+  </animation>
+  
+  <animation>
+    <type>translate</type>
+    <object-name>EnsembleDroit</object-name>
+    <property>gear/gear[1]/compression-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep> 0.0000 </dep></entry>
+      <entry><ind> 1 </ind><dep> 0.1011 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> -1.99051 </x-m>
+      <y-m>  1.10670 </y-m>
+      <z-m> -1.15824 </z-m>
+    </center>
+    <axis>
+      <x> 0.044 </x>
+      <y> 0.000 </y>
+      <z> 0.091 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <name>EnsembleQueue</name>
+    <object-name>axeAB</object-name>
+    <object-name>roueA</object-name>
+  </animation>
+  
+  <animation>
+    <type>translate</type>
+    <object-name>EnsembleQueue</object-name>
+    <property>gear/gear[2]/compression-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep> 0.0000 </dep></entry>
+      <entry><ind> 1 </ind><dep> 0.0433 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> -1.99051 </x-m>
+      <y-m>  1.10670 </y-m>
+      <z-m> -1.15824 </z-m>
+    </center>
+    <axis>
+      <x> -0.033 </x>
+      <y>  0.000 </y>
+      <z>  0.028 </z>
+    </axis>
+  </animation>
+  
   <!-- Animation des portes -->
   <animation>
     <name>LaPorte</name>
@@ -712,9 +754,23 @@
   </animation>
 
   <animation>
+    <type>pick</type>
+    <object-name>LaPorte</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.crew.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
     <type>rotate</type>
     <object-name>LaPorte</object-name>
-    <property>instrumentation/doors/crew/position-norm</property>
+    <property>sim/model/door-positions/crew/position-norm</property>
     <factor> -130 </factor>
     <axis>
       <x1-m> -1.379 </x1-m>
@@ -825,4 +881,3 @@
   </model>
 
 </PropertyList>
-

@@ -7,7 +7,7 @@ name "bougies"
 loc 0 0 -0
 data 7
 bougies
-texture "colors.png"
+texture "r-985.png"
 texrep 1 1
 crease 30.000001
 numvert 444
@@ -3371,7 +3371,7 @@ name "caches"
 loc 0 0 -0
 data 6
 caches
-texture "colors.png"
+texture "r-985.png"
 texrep 1 1
 crease 30.000001
 numvert 583
@@ -8070,7 +8070,7 @@ name "cames"
 loc 0 0 -0
 data 5
 cames
-texture "colors.png"
+texture "r-985.png"
 texrep 1 1
 crease 30.000001
 numvert 573
@@ -11991,7 +11991,7 @@ name "ecrous"
 loc 0 0 -0
 data 6
 ecrous
-texture "colors.png"
+texture "r-985.png"
 texrep 1 1
 crease 30.000001
 numvert 1128
@@ -20562,7 +20562,7 @@ name "pistons"
 loc 0 0 -0
 data 7
 pistons
-texture "colors.png"
+texture "r-985.png"
 texrep 1 1
 crease 30.000001
 numvert 4821
@@ -54814,7 +54814,7 @@ name "souflets"
 loc 0 0 -0
 data 8
 souflets
-texture "colors.png"
+texture "r-985.png"
 texrep 1 1
 crease 30.000001
 numvert 1576
@@ -66657,7 +66657,7 @@ name "tuyaux"
 loc 0 0 -0
 data 6
 tuyaux
-texture "colors.png"
+texture "r-985.png"
 texrep 1 1
 crease 30.000001
 numvert 1440

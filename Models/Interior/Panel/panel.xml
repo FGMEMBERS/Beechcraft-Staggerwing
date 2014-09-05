@@ -41,6 +41,16 @@
     </offsets>
   </model>
 
+  <!-- ADF -->
+  <model>
+    <path>Aircraft/Beechcraft-Staggerwing/Models/Interior/Panel/Instruments/adf/rmi.xml</path>
+    <offsets>
+      <x-m>  0.082 </x-m>
+      <y-m> -0.320 </y-m>
+      <z-m> -0.120 </z-m>
+    </offsets>
+  </model>
+  
   <!-- TURN -->
   <model>
     <path>Aircraft/Beechcraft-Staggerwing/Models/Interior/Panel/Instruments/turn/turn.xml</path>
@@ -61,5 +71,14 @@
     </offsets>
   </model>
 
+  <!-- MAG-COMPASS -->
+  <model>
+    <path>Aircraft/Beechcraft-Staggerwing/Models/Interior/Panel/Instruments/mag-compass/mag-compass.xml</path>
+    <offsets>
+      <x-m>  0.465 </x-m>
+      <y-m> -0.122 </y-m>
+      <z-m>  0.289 </z-m>
+    </offsets>
+  </model>
+  
 </PropertyList>
-

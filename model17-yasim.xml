@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <!-- Beechcraft Model 17 Staggerwing BARANGER Emmanuel with Melchior script (2012)
+                             Updated BARANGER Emmanuel (September 2014)
 
      Sources              : http://en.wikipedia.org/wiki/Beechcraft_Model_17_Staggerwing
 
@@ -13,89 +14,91 @@
      Cruise speed         : 176 kts     (  325 km/h )
 -->
 
-<airplane mass="2540" >
-
+<airplane mass="2540" version="YASIM_VERSION_CURRENT">
+  
   <approach speed="42" aoa="6" fuel="0.2">
     <control-setting axis="/controls/engines/engine[0]/throttle" value="0.2"/>
     <control-setting axis="/controls/engines/engine[0]/mixture" value="0.65"/>
     <control-setting axis="/controls/gear/gear-down" value="1"/>
   </approach>
-
+  
   <cruise speed="176" alt="5000" fuel="0.5" >
     <control-setting axis="/controls/engines/engine[0]/throttle" value="1.0" />
     <control-setting axis="/controls/engines/engine[0]/mixture" value="0.65" />
     <control-setting axis="/controls/gear/gear-down" value="0"/>
   </cruise>
-
+  
   <cockpit x="1.665" y="0.300" z="0.713"/>
-
+  
   <fuselage ax=" 3.624" ay="0" az="-0.029" bx=" 3.426" by="0" bz="-0.029" width="1.143" taper="0.70" midpoint="1"/>
   <fuselage ax=" 3.426" ay="0" az="-0.029" bx="-0.259" by="0" bz="-0.029" width="1.143" taper="1.00" midpoint="1"/>
-
+  
   <fuselage ax="-0.259" ay="0" az="-0.029" bx="-3.400" by="0" bz=" 0.171" width="1.143" taper="0.40" midpoint="0"/>
-
+  
   <!-- Wing up -->
   <wing x="0.898" y="0" z="0.878"
         chord="1.490"
         length="4.90"
         taper="1"
-        camber="0.01">
-        <stall aoa="16" width="1" peak="1.5"/>
+        camber="0.002">
+        <stall aoa="18" width="1" peak="1.5"/>
         <flap0 start="0.244" end="0.86" lift="1.2" drag="1.1"/>
-
+    
         <control-input axis="/controls/flight/aileron" control="FLAP0" split="true"/>
         <control-input axis="/controls/flight/aileron-trim" control="FLAP0" split="true"/>
-
+    
         <control-output control="FLAP0" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
         <control-output control="FLAP0" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
   </wing>
-
+  
   <!-- Wing down -->
   <mstab x="1.519" y="0" z="-0.684"
          chord="1.490"
          length="4.90"
          taper="1"
-         camber="0.01">
+         camber="0.002">
          <stall aoa="18" width="1" peak="1.5"/>
-         <flap0 start="0.244" end="0.86" lift="1.3" drag="1.5"/>
-
+         <flap0 start="0.244" end="0.86" lift="1.2" drag="1.2"/>
+    
          <control-input axis="/controls/flight/flaps" control="FLAP0"/>
-
+    
          <control-output control="FLAP0" side="left" prop="/surface-positions/left-flap-pos-norm"/>
          <control-output control="FLAP0" side="right" prop="/surface-positions/right-flap-pos-norm"/>
          <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
+         
+         <control-speed control="FLAP0" transition-time="3"/>
   </mstab>
-
+  
   <hstab x="-3.165" y="0" z="0.367"
-	 chord="1.558"
-	 length="1.784"
-         taper="0.60"
-         sweep="10">
-         <stall aoa="19" width="1" peak="1.5"/>
-         <flap0 start="0.0" end="1" lift="1.55" drag="1.2"/>
-
-         <control-input axis="/controls/flight/elevator" control="FLAP0"/>
-         <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
-
-         <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
-  </hstab>
-
-  <vstab x="-3.187" y="0" z="0.045"
-	 chord="1.679"
-	 length="1.700"
+         chord="1.558"
+         length="1.784"
          taper="0.60"
          sweep="10">
          <stall aoa="16" width="1" peak="1.5"/>
+         <flap0 start="0.0" end="1" lift="1.2" drag="1.1"/>
+    
+         <control-input axis="/controls/flight/elevator" control="FLAP0"/>
+         <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
+    
+         <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
+  </hstab>
+  
+  <vstab x="-3.187" y="0" z="0.045"
+         chord="1.679"
+         length="1.700"
+         taper="0.60"
+         sweep="10">
+         <stall aoa="14" width="1" peak="1.5"/>
          <flap0 start="0" end="1" lift="1.2" drag="1.1"/>
-         
+    
          <control-input axis="/controls/flight/rudder" square="true" control="FLAP0" invert="true"/>
          <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
-         
+    
          <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm" min="1" max="-1"/>
   </vstab>
-
+  
   <!-- Engine    source            : http://en.wikipedia.org/wiki/Pratt_%26_Whitney_R-985
-
+  
                  name              : Pratt & Whitney R-985 Wasp Junior
                  type              : 9-cylinder supercharged air-cooled radial piston engine
                  power cruise      : 400 hp at 2200 RPM up to 5000 ft; 450 hp at 2300 RPM for takeoff
@@ -106,7 +109,7 @@
   <propeller x="3.207" y="0" z="-0.029"
              radius="1.27"
              mass="640"
-             moment="4"
+             moment="10"
              cruise-power="420"
              cruise-speed="176"
              cruise-rpm="2100"
@@ -118,14 +121,14 @@
                             eng-rpm="2300"
                             alt="5000"
                             displacement="985"
-                            compression="6.0">
+                            compression="6">
                             <control-input control="THROTTLE" axis="/controls/engines/engine[0]/throttle"/>
                             <control-input control="STARTER" axis="/controls/engines/engine[0]/starter"/>
                             <control-input control="MAGNETOS" axis="/controls/engines/engine[0]/magnetos"/>
                             <control-input control="MIXTURE" axis="/controls/engines/engine[0]/mixture"/>
              </piston-engine>
   </propeller>
-
+  
   <!-- Left wheel -->
   <gear x="2.102" y="1.108" z="-1.718"
         compression="0.15"
@@ -136,12 +139,12 @@
         <control-input axis="/controls/gear/brake-left" control="BRAKE" split="true"/>
         <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
         <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
-
+    
         <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
-
+    
         <control-speed control="EXTEND" transition-time="7"/>
   </gear>
-
+  
   <!-- Right wheel -->
   <gear x="2.102" y="-1.108" z="-1.718"
         compression="0.15"
@@ -152,12 +155,12 @@
         <control-input axis="/controls/gear/brake-right" control="BRAKE" split="true"/>
         <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
         <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
-
+    
         <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
-
+    
         <control-speed control="EXTEND" transition-time="7"/>
   </gear>
-
+  
   <!-- Tail wheel -->
   <gear x="-3.112" y="0" z="-0.395"
         compression="0.1"
@@ -167,17 +170,16 @@
         dfric="1">
         <control-input axis="/controls/flight/rudder" control="STEER" src0="-1.0" src1="1.0" dst0="0.5" dst1="-0.5"/>
         <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
-
+    
         <control-output control="EXTEND" prop="/gear/gear[2]/position-norm"/>
-
+    
         <control-speed control="EXTEND" transition-time="7"/>
   </gear>
-
+  
   <!-- Fuel: 250 lbs -->
   <tank x="1.56" y="0" z="-0.400" capacity="250"/>
-
+  
   <!-- Mass displacment -->
-  <ballast x="-0.174" y="0.0" z="-1.728" mass="400" />
-
+  <ballast x="-1.2" y="0.0" z="-0.5" mass="500" />
+  
 </airplane>
-
