@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>interior.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>interieur</object-name>
+    <object-name>inttour</object-name>
+    <object-name>inttourporte</object-name>
+    <object-name>planchet</object-name>
+    <object-name>intporte</object-name>
+
+    <!-- Objets transparents -->
+    <object-name>intvitres</object-name>
+    <object-name>intvitreporte</object-name>
+  </animation>
+
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/Beechcraft-Staggerwing/Models/Effects/Glass/glass</inherits-from>
+    <object-name>intvitres</object-name>
+    <object-name>intvitreporte</object-name>
+  </effect>
+  
+  <!-- Pilote -->
+  <model>
+    <path>Aircraft/Beechcraft-Staggerwing/Models/Pilot/pilot.xml</path>
+    <offsets>
+      <x-m> -1.800 </x-m>
+      <y-m> -0.300 </y-m>
+      <z-m>  0.150 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Tableau de bord -->
+  <model>
+    <path>Aircraft/Beechcraft-Staggerwing/Models/Interior/Panel/panel.xml</path>
+    <offsets>
+      <x-m> -2.356 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.443 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Les sièges -->
+  <model>
+    <path>Aircraft/Beechcraft-Staggerwing/Models/Interior/Seats/all-seats.xml</path>
+  </model>
+
+  <!-- Animation des portes -->
+  <animation>
+    <name>IntLaPorte</name>
+    <object-name>intporte</object-name>
+    <object-name>inttourporte</object-name>
+    <object-name>intvitreporte</object-name>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>IntLaPorte</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.crew.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>IntLaPorte</object-name>
+    <property>sim/model/door-positions/crew/position-norm</property>
+    <factor> -130 </factor>
+    <axis>
+      <x1-m> -1.379 </x1-m>
+      <y1-m> -0.724 </y1-m>
+      <z1-m> -0.103 </z1-m>
+      <x2-m> -1.379 </x2-m>
+      <y2-m> -0.730 </y2-m>
+      <z2-m>  0.243 </z2-m>
+    </axis>
+  </animation>
+
+</PropertyList>
