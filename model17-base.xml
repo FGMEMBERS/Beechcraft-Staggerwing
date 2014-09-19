@@ -120,6 +120,9 @@
       <file>Aircraft/Beechcraft-Staggerwing/Nasal/liveries.nas</file>
       <file>Aircraft/Beechcraft-Staggerwing/Nasal/light.nas</file>
     </model17>
+    <immat>
+      <file>Aircraft/Beechcraft-Staggerwing/Nasal/immat.nas</file>
+    </immat>
   </nasal>
 
 </PropertyList>
