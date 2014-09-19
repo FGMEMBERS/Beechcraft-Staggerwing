@@ -192,6 +192,11 @@
     </offsets>
   </model>
 
+  <!-- Immatriculation -->
+  <model>
+    <path>Aircraft/Beechcraft-Staggerwing/Models/Immat/immat.xml</path>
+  </model>
+  
   <!-- L'interieur -->
   <model>
     <name>Interieur</name>
