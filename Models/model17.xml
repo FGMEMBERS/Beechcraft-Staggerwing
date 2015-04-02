@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <PropertyList>
 
   <path>model17.ac</path>
 
-  <nasal>
+  <!-- <nasal>
     <load>
       var livery_update = aircraft.livery_update.new("Aircraft/Beechcraft-Staggerwing/Models/Liveries", 10);
 
@@ -13,9 +13,9 @@
       var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
       var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
       
-      var crew_door = self.getNode("sim/model/door-positions/crew/position-norm", 1);
-      var passenger_door = self.getNode("sim/model/door-positions/passenger/position-norm", 1);
-      
+      var crew_door = self.getNode("instrumentation/doors/crew/position-norm", 1);
+      var passenger_door = self.getNode("instrumentation/doors/passenger/position-norm", 1);
+    
       crew_door.alias(float_0);
       passenger_door.alias(float_1);
     </load>
@@ -25,7 +25,7 @@
       crew_door.unalias();
       passenger_door.unalias();
     </unload>
-  </nasal>
+  </nasal> -->
 
   <animation>
     <!-- Objets opaques -->
@@ -50,11 +50,8 @@
     <object-name>aubans</object-name>
     <object-name>bol</object-name>
     <object-name>porte</object-name>
-    <object-name>support</object-name>
-    <object-name>pito</object-name>
-    
+
     <object-name>helice</object-name>
-    <object-name>antenne</object-name>
     <object-name>attache</object-name>
     <object-name>axeGA</object-name>
     <object-name>axeGB</object-name>
@@ -67,13 +64,13 @@
     <object-name>roueA</object-name>
     <object-name>echappements</object-name>
     <object-name>trous</object-name>
-    <object-name>cables</object-name>
-    
+
     <!-- Objets transparents -->
     <object-name>vitres</object-name>
     <object-name>vitreporte</object-name>
     <object-name>propblur</object-name>
     <object-name>propdisc</object-name>
+    <object-name>cables</object-name>
   </animation>
 
   <animation>
@@ -99,11 +96,8 @@
     <object-name>aubans</object-name>
     <object-name>bol</object-name>
     <object-name>porte</object-name>
-    <object-name>support</object-name>
-    <object-name>pito</object-name>
-    
+
     <object-name>helice</object-name>
-    <object-name>antenne</object-name>
     <object-name>attache</object-name>
     <object-name>axeGA</object-name>
     <object-name>axeGB</object-name>
@@ -116,16 +110,39 @@
     <object-name>roueA</object-name>
     <object-name>echappements</object-name>
     <object-name>trous</object-name>
-    <object-name>cables</object-name>
-    
+
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
     <texture>texture.png</texture>
+<!--
+    <diffuse>
+      <red-prop>diffuse/red</red-prop>
+      <green-prop>diffuse/green</green-prop>
+      <blue-prop>diffuse/blue</blue-prop>
+    </diffuse>
+
+    <ambient>
+      <red-prop>ambient/red</red-prop>
+      <green-prop>ambient/green</green-prop>
+      <blue-prop>ambient/blue</blue-prop>
+    </ambient>
+-->
+    <specular>
+      <red-prop>specular/red</red-prop>
+      <green-prop>specular/green</green-prop>
+      <blue-prop>specular/blue</blue-prop>
+    </specular>
+
     <emission>
       <red-prop>emission/red</red-prop>
       <green-prop>emission/green</green-prop>
       <blue-prop>emission/blue</blue-prop>
     </emission>
+<!--
+    <shininess>
+      <shininess-prop>shininess</shininess-prop>
+    </shininess>
+-->
   </animation>
 
   <effect>
@@ -151,25 +168,22 @@
     <object-name>aubans</object-name>
     <object-name>bol</object-name>
     <object-name>porte</object-name>
-    <object-name>support</object-name>
-    <object-name>pito</object-name>
   </effect>
 
-  <!-- working for Rembrandt -->
-  <effect>
-    <inherits-from>Aircraft/Beechcraft-Staggerwing/Models/Effects/Glass/glass</inherits-from>
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
     <object-name>vitres</object-name>
-    <object-name>vitreporte</object-name>
-  </effect>
-  
-  <!-- working for Rembrandt -->
-  <effect>
-    <inherits-from>Effects/model-transparent</inherits-from>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
     <object-name>vitres</object-name>
-    <object-name>vitreporte</object-name>
     <object-name>propblur</object-name>
     <object-name>propdisc</object-name>
-  </effect>
+    <object-name>cables</object-name>
+  </animation>
 
   <!-- Le moteur -->
   <model>
@@ -192,22 +206,10 @@
     </offsets>
   </model>
 
-  <!-- Immatriculation -->
-  <model>
-    <path>Aircraft/Beechcraft-Staggerwing/Models/Immat/immat.xml</path>
-  </model>
-  
   <!-- L'interieur -->
   <model>
-    <name>Interieur</name>
     <path>Aircraft/Beechcraft-Staggerwing/Models/Interior/interior.xml</path>
   </model>
-
-  <!-- For Rembrandt -->
-  <animation>
-    <type>noshadow</type>
-    <object-name>Interieur</object-name>
-  </animation>
 
   <!-- Cranking effects -->
   <!-- Left -->
@@ -262,7 +264,7 @@
     </offsets>
   </model>
 
-  <!-- L'hélice --> 
+  <!-- L'hlice --> 
   <animation>
     <name>HeliceComplete</name>
     <object-name>propdisc</object-name>
@@ -271,7 +273,7 @@
     <object-name>bol</object-name>
   </animation>
 
-  <!-- Séléction de l'objet visible en fonction des rpm -->
+  <!-- Slction de l'objet visible en fonction des rpm -->
   <animation>
     <type>select</type>
     <object-name>propdisc</object-name>
@@ -314,21 +316,17 @@
   <animation>
     <type>spin</type>
     <object-name>HeliceComplete</object-name>
-    <condition>
-      <greater-than>
-        <property>engines/engine[0]/rpm</property>
-        <value> 5 </value>
-      </greater-than>
-    </condition>
     <property>engines/engine[0]/rpm</property>
     <factor> 1 </factor>
+    <center>
+      <x-m> -4.114 </x-m>
+      <y-m> -0.0 </y-m>
+      <z-m> -0.0290007 </z-m>
+    </center>
     <axis>
-      <x1-m> -4.062 </x1-m>
-      <y1-m>  0.000 </y1-m>
-      <z1-m> -0.073 </z1-m>
-      <x2-m> -3.626 </x2-m>
-      <y2-m>  0.000 </y2-m>
-      <z2-m> -0.042 </z2-m>
+      <x> -1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -595,7 +593,7 @@
     </axis>
   </animation>
 
-  <!-- Rentrée des roues -->
+  <!-- Rentre des roues -->
   <animation>
     <name>TrainGauche</name>
     <object-name>axeGA</object-name>
@@ -671,86 +669,7 @@
       <z> 1 </z>
     </axis>
   </animation>
-  
-  <!-- Compression -->
-  <animation>
-    <name>EnsembleGauche</name>
-    <object-name>axeGB</object-name>
-    <object-name>roueG</object-name>
-  </animation>
-  
-  <animation>
-    <type>translate</type>
-    <object-name>EnsembleGauche</object-name>
-    <property>gear/gear[0]/compression-norm</property>
-    <interpolation>
-      <entry><ind> 0 </ind><dep> 0.0000 </dep></entry>
-      <entry><ind> 1 </ind><dep> 0.1011 </dep></entry>
-    </interpolation>
-    <center>
-      <x-m> -1.99051 </x-m>
-      <y-m> -1.10670 </y-m>
-      <z-m> -1.15824 </z-m>
-    </center>
-    <axis>
-      <x> 0.044 </x>
-      <y> 0.000 </y>
-      <z> 0.091 </z>
-    </axis>
-  </animation>
-  
-  <animation>
-    <name>EnsembleDroit</name>
-    <object-name>axeDB</object-name>
-    <object-name>roueD</object-name>
-  </animation>
-  
-  <animation>
-    <type>translate</type>
-    <object-name>EnsembleDroit</object-name>
-    <property>gear/gear[1]/compression-norm</property>
-    <interpolation>
-      <entry><ind> 0 </ind><dep> 0.0000 </dep></entry>
-      <entry><ind> 1 </ind><dep> 0.1011 </dep></entry>
-    </interpolation>
-    <center>
-      <x-m> -1.99051 </x-m>
-      <y-m>  1.10670 </y-m>
-      <z-m> -1.15824 </z-m>
-    </center>
-    <axis>
-      <x> 0.044 </x>
-      <y> 0.000 </y>
-      <z> 0.091 </z>
-    </axis>
-  </animation>
-  
-  <animation>
-    <name>EnsembleQueue</name>
-    <object-name>axeAB</object-name>
-    <object-name>roueA</object-name>
-  </animation>
-  
-  <animation>
-    <type>translate</type>
-    <object-name>EnsembleQueue</object-name>
-    <property>gear/gear[2]/compression-norm</property>
-    <interpolation>
-      <entry><ind> 0 </ind><dep> 0.0000 </dep></entry>
-      <entry><ind> 1 </ind><dep> 0.0433 </dep></entry>
-    </interpolation>
-    <center>
-      <x-m> -1.99051 </x-m>
-      <y-m>  1.10670 </y-m>
-      <z-m> -1.15824 </z-m>
-    </center>
-    <axis>
-      <x> -0.033 </x>
-      <y>  0.000 </y>
-      <z>  0.028 </z>
-    </axis>
-  </animation>
-  
+
   <!-- Animation des portes -->
   <animation>
     <name>LaPorte</name>
@@ -759,23 +678,9 @@
   </animation>
 
   <animation>
-    <type>pick</type>
-    <object-name>LaPorte</object-name>
-    <visible>true</visible>
-    <action>
-      <button>0</button>
-      <repeatable>false</repeatable>
-      <binding>
-        <command>nasal</command>
-        <script>doors.crew.toggle();</script>
-      </binding>
-    </action>
-  </animation>
-  
-  <animation>
     <type>rotate</type>
     <object-name>LaPorte</object-name>
-    <property>sim/model/door-positions/crew/position-norm</property>
+    <property>instrumentation/doors/crew/position-norm</property>
     <factor> -130 </factor>
     <axis>
       <x1-m> -1.379 </x1-m>
@@ -868,7 +773,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Beechcraft-Staggerwing/Models/lights/StrobeLight.xml</path>
+    <path>Aircraft/Beechcraft-Staggerwing/Models/lights/StrobeWhite.xml</path>
     <offsets>
       <x-m> -1.648 </x-m>
       <y-m> -4.867 </y-m>
@@ -877,7 +782,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Beechcraft-Staggerwing/Models/lights/StrobeLight.xml</path>
+    <path>Aircraft/Beechcraft-Staggerwing/Models/lights/StrobeWhite.xml</path>
     <offsets>
       <x-m> -1.648 </x-m>
       <y-m>  4.867 </y-m>
@@ -886,3 +791,4 @@
   </model>
 
 </PropertyList>
+

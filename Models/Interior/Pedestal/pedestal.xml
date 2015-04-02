@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>pedestal.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>pedestal</object-name>
+    <object-name>propL</object-name>
+    <object-name>propR</object-name>
+    <object-name>trotL</object-name>
+    <object-name>trotR</object-name>
+    <object-name>mixtL</object-name>
+    <object-name>mixtR</object-name>
+    
+    <!-- Objets transparents -->
+  </animation>
+
+    
+  <animation>
+    <type>rotate</type>
+    <object-name>throttle</object-name>
+    <property>controls/engines/engine[0]/throttle</property>
+    <factor> -70 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>propeller</object-name>
+    <property>controls/engines/engine[0]/propeller-pitch</property>
+    <factor> -70 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+   
+  <animation>
+    <type>rotate</type>
+    <object-name>mixture</object-name>
+    <property>controls/engines/engine[0]/mixture</property>
+    <factor> -70 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  
+</PropertyList>

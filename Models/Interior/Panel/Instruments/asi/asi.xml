@@ -12,8 +12,9 @@
     <object-name>vitre</object-name>
   </animation>
 
+  <!-- working for Rembrandt -->
   <effect>
-    <inherits-from>Aircraft/Beechcraft-Staggerwing/Models/Effects/Glass/glass</inherits-from>
+    <inherits-from>Aircraft/Beechcraft-C18S/Models/Effects/Glass/glass</inherits-from>
     <object-name>vitre</object-name>
   </effect>
   

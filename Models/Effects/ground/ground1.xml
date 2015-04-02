@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <PropertyList>
 
@@ -10,11 +10,9 @@
 
     <condition>
       <and>
-        <!-- /gear/gear[1]/wow -->
-        <property>sim/multiplay/generic/float[7]</property>
+        <property>/gear/gear[1]/wow</property>
         <greater-than>
-          <!-- /gear/gear[1]/rollspeed-ms -->
-          <property>sim/multiplay/generic/float[10]</property>
+          <property>/gear/gear[1]/rollspeed-ms</property>
           <value>5</value>
         </greater-than>
       </and>

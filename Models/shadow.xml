@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <PropertyList>
 
@@ -20,10 +20,7 @@
     <type>select</type>
     <object-name>shadow</object-name>
     <condition>
-      <and>
-        <not><property>sim/freeze/replay-state</property></not>
-        <not><property>sim/rendering/shadows/enabled</property></not>
-      </and>
+      <not><property>sim/freeze/replay-state</property></not>
     </condition>
   </animation>
 
@@ -56,15 +53,16 @@
 
   <!-- Translate to ground level -->
   <animation>
-    <type>translate</type>
-    <object-name>shadow</object-name>
-    <property>sim/multiplay/generic/float[2]</property>
-    <factor> -1 </factor>
-    <axis>
-      <x> 0 </x>
-      <y> 0 </y>
-      <z> 1 </z>
-    </axis>
-  </animation>
+   <type>translate</type>
+   <object-name>shadow</object-name>
+   <property>sim/multiplay/generic/float[2]</property>
+   <factor> -1 </factor>
+   <axis>
+     <x> 0 </x>
+     <y> 0 </y>
+     <z> 1 </z>
+   </axis>
+ </animation>
 
 </PropertyList>
+

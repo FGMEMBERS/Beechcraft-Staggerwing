@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <PropertyList>
 
@@ -33,24 +33,14 @@
 
   <!-- ALT -->
   <model>
-    <path>Aircraft/Beechcraft-Staggerwing/Models/Interior/Panel/Instruments/alt/alt.xml</path>
+    <path>Aircraft/Beechcraft-Staggerwing/Models/Interior/Panel/Instruments/altitude/altimeter.xml</path>
     <offsets>
       <x-m>  0.081 </x-m>
-      <y-m> -0.080 </y-m>
-      <z-m>  0.010 </z-m>
+      <y-m> -0.320 </y-m>
+      <z-m>  -0.120 </z-m>
     </offsets>
   </model>
 
-  <!-- ADF -->
-  <model>
-    <path>Aircraft/Beechcraft-Staggerwing/Models/Interior/Panel/Instruments/adf/rmi.xml</path>
-    <offsets>
-      <x-m>  0.082 </x-m>
-      <y-m> -0.320 </y-m>
-      <z-m> -0.120 </z-m>
-    </offsets>
-  </model>
-  
   <!-- TURN -->
   <model>
     <path>Aircraft/Beechcraft-Staggerwing/Models/Interior/Panel/Instruments/turn/turn.xml</path>
@@ -71,14 +61,65 @@
     </offsets>
   </model>
 
-  <!-- MAG-COMPASS -->
+   <!-- Clock -->
   <model>
-    <path>Aircraft/Beechcraft-Staggerwing/Models/Interior/Panel/Instruments/mag-compass/mag-compass.xml</path>
+    <path>Aircraft/Beechcraft-Staggerwing/Models/Interior/Panel/Instruments/clock/clock.xml</path>
     <offsets>
-      <x-m>  0.465 </x-m>
-      <y-m> -0.122 </y-m>
-      <z-m>  0.289 </z-m>
+      <x-m>  0.081 </x-m>
+      <y-m>  -0.085 </y-m>
+      <z-m>  0.090 </z-m>
     </offsets>
   </model>
-  
+
+  <!-- oat -->
+  <model>
+    <path>Aircraft/Beechcraft-Staggerwing/Models/Interior/Panel/Instruments/oat/oat.xml</path>
+    <offsets>
+      <x-m>  0.078 </x-m>
+      <y-m>  0.130 </y-m>
+      <z-m>  -0.010 </z-m>
+    </offsets>
+  </model>
+
+  <!-- manifold -->
+  <model>
+    <path>Aircraft/Beechcraft-Staggerwing/Models/Interior/Panel/Instruments/man/man.xml</path>
+    <offsets>
+      <x-m>  0.0781 </x-m>
+      <y-m>  0.050 </y-m>
+      <z-m>  -0.010 </z-m>
+    </offsets>
+  </model>
+
+  <!-- ammeter -->
+  <model>
+    <path>Aircraft/Beechcraft-Staggerwing/Models/Interior/Panel/Instruments/ammeter/ammeter.xml</path>
+    <offsets>
+      <x-m>  0.081 </x-m>
+      <y-m>  0.080 </y-m>
+      <z-m> -0.120 </z-m>
+    </offsets>
+  </model>
+
+  <!-- rpm -->
+  <model>
+    <path>Aircraft/Beechcraft-Staggerwing/Models/Interior/Panel/Instruments/rpm/rpm.xml</path>
+    <offsets>
+      <x-m>  0.081 </x-m>
+      <y-m>  0.009 </y-m>
+      <z-m> -0.120 </z-m>
+    </offsets>
+  </model>
+
+  <!-- compass -->
+  <model>
+    <path>Aircraft/Beechcraft-Staggerwing/Models/Interior/Panel/Instruments/compass/compass.xml</path>
+    <offsets>
+      <x-m>  0.090 </x-m>
+      <y-m>  -0.08 </y-m>
+      <z-m>  -0.010 </z-m>
+    </offsets>
+  </model>
+
 </PropertyList>
+

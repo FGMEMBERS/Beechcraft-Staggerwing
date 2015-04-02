@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <PropertyList>
 
@@ -17,20 +17,25 @@
     <object-name>intvitreporte</object-name>
   </animation>
 
-  <!-- working for Rembrandt -->
-  <effect>
-    <inherits-from>Aircraft/Beechcraft-Staggerwing/Models/Effects/Glass/glass</inherits-from>
+  <animation>
+    <type>noshadow</type>
     <object-name>intvitres</object-name>
-    <object-name>intvitreporte</object-name>
-  </effect>
-  
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>intvitres</object-name>
+  </animation>
+
   <!-- Pilote -->
   <model>
     <path>Aircraft/Beechcraft-Staggerwing/Models/Pilot/pilot.xml</path>
     <offsets>
-      <x-m> -1.800 </x-m>
+      <x-m> -1.890 </x-m>
       <y-m> -0.300 </y-m>
-      <z-m>  0.150 </z-m>
+      <z-m>  0.090 </z-m>
     </offsets>
   </model>
 
@@ -44,9 +49,14 @@
     </offsets>
   </model>
 
-  <!-- Les sièges -->
+   <!-- Pedestal -->
   <model>
-    <path>Aircraft/Beechcraft-Staggerwing/Models/Interior/Seats/all-seats.xml</path>
+    <path>Aircraft/Beechcraft-Staggerwing/Models/Interior/Pedestal/pedestal.xml</path>
+    <offsets>
+      <x-m>  -2.207 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> 0.1364 </z-m>
+    </offsets>
   </model>
 
   <!-- Animation des portes -->
@@ -58,23 +68,9 @@
   </animation>
 
   <animation>
-    <type>pick</type>
-    <object-name>IntLaPorte</object-name>
-    <visible>true</visible>
-    <action>
-      <button>0</button>
-      <repeatable>false</repeatable>
-      <binding>
-        <command>nasal</command>
-        <script>doors.crew.toggle();</script>
-      </binding>
-    </action>
-  </animation>
-  
-  <animation>
     <type>rotate</type>
     <object-name>IntLaPorte</object-name>
-    <property>sim/model/door-positions/crew/position-norm</property>
+    <property>instrumentation/doors/crew/position-norm</property>
     <factor> -130 </factor>
     <axis>
       <x1-m> -1.379 </x1-m>
@@ -87,3 +83,4 @@
   </animation>
 
 </PropertyList>
+

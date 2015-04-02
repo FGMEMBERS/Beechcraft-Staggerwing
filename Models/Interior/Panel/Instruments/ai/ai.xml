@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <PropertyList>
 
@@ -15,11 +15,18 @@
     <object-name>vitre</object-name>
   </animation>
 
-  <effect>
-    <inherits-from>Aircraft/Beechcraft-Staggerwing/Models/Effects/Glass/glass</inherits-from>
+  <animation>
+    <type>noshadow</type>
     <object-name>vitre</object-name>
-  </effect>
-  
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>vitre</object-name>
+  </animation>
+
   <animation>
     <type>material</type>
     <object-name>face</object-name>
@@ -27,10 +34,10 @@
     <object-name>horizon-line</object-name>
     <object-name>aircraft-line</object-name>
     <emission>
-      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
       <red>   0.50 </red>
       <green> 0.25 </green>
       <blue>  0.25 </blue>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
     </emission>
   </animation>
 
@@ -40,9 +47,9 @@
     <object-name>horizon-line</object-name>
     <property>/instrumentation/attitude-indicator/indicated-roll-deg</property>
     <axis>
-      <x> 1 </x>
-      <y> 0 </y>
-      <z> 0 </z>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
     </axis>
   </animation>
 
@@ -62,9 +69,9 @@
       <entry><ind>  180 </ind><dep> -0.03 </dep></entry>
     </interpolation>
       <axis> 
-       <x> 0 </x>
-       <y> 0 </y>
-       <z> 1 </z>
+       <x>0</x>
+       <y>0</y>
+       <z>1</z>
     </axis>
   </animation>
 
